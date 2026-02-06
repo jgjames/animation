@@ -1,0 +1,90 @@
+/* Start of Intro */
+
+.intro {
+  position: relative;
+  background-color: #cb0101;
+  overflow: hidden;
+}
+/* 
+.bg-img {
+  opacity: 0.5;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+} */
+
+.ultrafly {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  opacity: 0;
+  width: 0;
+  transform-origin: center;
+  max-width: none;
+  will-change: width, transform, opacity;
+  position: relative;
+  z-index: 3;
+}
+
+/* When `.play` is added to the element, start the animations */
+.ultrafly.play {
+  animation:
+    ultrafly-grow 2s ease forwards,
+    ultrafly-flyup 0.5s ease 2.5s forwards;
+}
+
+@keyframes ultrafly-grow {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  25% {
+    opacity: 0;
+    width: 0;
+  }
+  50% {
+    opacity: 1;
+    width: 12.5vw;
+  }
+  75% {
+    width: 50vw;
+  }
+  100% {
+    width: 200vw;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ultrafly-flyup {
+  0% {
+    width: 200vw;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    width: 500vw;
+    transform: translateY(-200vh);
+  }
+}
+
+.play-overlay {
+  position: absolute;
+  z-index: 50;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/*  End of Intro  */
