@@ -5,6 +5,7 @@
   background-color: #cb0101;
   overflow: hidden;
 }
+
 /* 
 .bg-img {
   opacity: 0.5;
@@ -32,43 +33,21 @@
 
 /* When `.play` is added to the element, start the animations */
 .ultrafly.play {
-  animation:
-    ultrafly-grow 2s ease forwards,
-    ultrafly-flyup 0.5s ease 2.5s forwards;
+  animation: ultrafly-grow 3s  forwards;
 }
+
 
 @keyframes ultrafly-grow {
   0% {
     opacity: 0;
     width: 0;
+    transform: translateY(50px);
   }
-  25% {
-    opacity: 0;
-    width: 0;
-  }
-  50% {
-    opacity: 1;
-    width: 12.5vw;
-  }
-  75% {
-    width: 50vw;
-  }
-  100% {
-    width: 200vw;
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-@keyframes ultrafly-flyup {
-  0% {
+  100% {
     width: 200vw;
     opacity: 1;
     transform: translateY(0);
-  }
-  100% {
-    width: 500vw;
-    transform: translateY(-200vh);
   }
 }
 
